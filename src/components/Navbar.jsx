@@ -80,7 +80,7 @@ const Navbar = () => {
           content="Profile"
           position="BottomCenter"
           >
-            <div className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg" onCLick={()=>{}}>
+            <div className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"  >
               <img
                className='rounded-full w-8 h-8' src={avatar} />
                <p>
