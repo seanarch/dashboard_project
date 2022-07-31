@@ -1,7 +1,7 @@
  import React from 'react'
- import { GridComponent, ColumnsDirective, ColumnDirective,Resize, Sort, ContextMenu, Filter, Page, ExcelExport, PdfExport, Edit, Inject } from '@syncfusion/ej2-react-grids'
+ import { GridComponent, ColumnsDirective, ColumnDirective,Resize, Sort, ContextMenu, Filter, Toolbar, Page, Search, Inject } from '@syncfusion/ej2-react-grids'
 
-import { employeesData, contextMenuItems, employeesGrid } from '../data/dummy'
+import { employeesData, employeesGrid } from '../data/dummy'
 import { Header } from '../components'
  
  const Employees = () => {
@@ -13,13 +13,15 @@ import { Header } from '../components'
         dataSource={employeesData}
         allowPaging
         allowSorting
+        toolbar={['Search']}
+        width="auto"
         >
         <ColumnsDirective>
         {employeesGrid.map((item, index)=> (
           <ColumnDirective key={index}{...item} />
         ))}
         </ColumnsDirective>
-        <Inject services={[Resize, Sort, ContextMenu, Filter, Page, ExcelExport, Edit, PdfExport ]} />
+        <Inject services={[Page, Search, Toolbar ]} />
       </GridComponent>
     </div>
   )
